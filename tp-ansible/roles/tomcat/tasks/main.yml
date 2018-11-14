@@ -11,5 +11,5 @@
     state: started
 
 - name: include tests
-  include_tasks: tests.yml
+  include: tests.yml
   tags: tests

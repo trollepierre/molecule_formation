@@ -1,6 +1,3 @@
-# deploy.yml
----
-
 - hosts: all
   tasks:
     - name: check mandatory attributes
@@ -8,6 +5,7 @@
         msg: "Missing arg: tomcat_app_version"
       when: tomcat_app_version is not defined
       run_once: true
+      check_mode: no
       tags: [ always ]
 
 - hosts: app-servers
@@ -17,5 +15,3 @@
   roles:
     - role: tomcat-app
       tags: [ app, tomcat, deploy ]
-
-...

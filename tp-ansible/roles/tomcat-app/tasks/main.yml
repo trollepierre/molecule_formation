@@ -1,17 +1,13 @@
-# roles/tomcat-app/tasks/main.yml
----
+- include: check-deploy-needed.yml
 
-- include_tasks: check-deploy-needed.yml
-
-- include_tasks: deploy.yml
+- include: deploy.yml
   when: tomcat_app_needs_deploy
 
-- include_tasks: configure.yml
+- include: configure.yml
 
 - name: Make sure tomcat is started
   meta: flush_handlers
 
-- include_tasks: tests.yml
+- include: tests.yml
 
-- include_tasks: enable-in-haproxy.yml
-
+- include: enable-in-haproxy.yml

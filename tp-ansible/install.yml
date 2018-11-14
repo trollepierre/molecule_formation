@@ -1,5 +1,11 @@
 # install.yml
 ---
+- hosts: all
+  gather_facts: true
+  become: true
+  roles:
+  - role: common
+    tags: common
 
 - hosts: load-balancers
   gather_facts: false
@@ -14,5 +20,3 @@
   roles:
   - role: tomcat
     tags: tomcat
-
-...

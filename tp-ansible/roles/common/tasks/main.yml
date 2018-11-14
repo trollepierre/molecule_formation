@@ -1,0 +1,6 @@
+# roles/common/tasks/main.yml
+---
+- name: install httplib2 required by uri module
+  package:
+    name: python-httplib2
+

@@ -1,6 +1,3 @@
-# roles/tomcat-app/tasks/check-deploy-needed.yml
----
-
 - name: Get currently running application version
   uri:
     url: http://localhost:8080/{{ tomcat_app_name }}/version

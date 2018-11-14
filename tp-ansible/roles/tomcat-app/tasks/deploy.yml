@@ -1,7 +1,4 @@
-# roles/tomcat-app/tasks/deploy.yml
----
-
-- include_tasks: disable-in-haproxy.yml
+- include: disable-in-haproxy.yml
 
 - name: Stop tomcat
   service:

@@ -1,5 +1,3 @@
-# roles/tomcat-app/tasks/enable-in-haproxy.yml
-
 - name: add backend to haproxy
   haproxy:
     state: enabled
